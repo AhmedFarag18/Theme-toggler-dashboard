@@ -222,7 +222,7 @@ body::before {
     margin-top: 10px;
 }
 
-.followers_item h3 {
+.followers_item h5 {
     font-weight: 400;
     letter-spacing: 5px;
     font-size: 1rem;
