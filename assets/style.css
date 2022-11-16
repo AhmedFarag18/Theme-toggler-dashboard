@@ -1,0 +1,366 @@
+/* ==========================
+===== Variables 
+==============================*/
+:root {
+    --green: hsl(163, 72%, 41%);
+    --red: hsl(356, 69%, 56%);
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --youTube: hsl(348, 97%, 39%);
+}
+
+body.dark {
+    --Toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --BG: hsl(230, 17%, 14%);
+    --BG-pattern: hsl(232, 19%, 15%);
+    --Card-BG: hsl(228, 28%, 20%);
+    --Blue-Text: hsl(228, 34%, 66%);
+    --Text: hsl(0, 0%, 100%);
+}
+
+body.light {
+    --Toggle: hsl(230, 22%, 74%);
+    --BG: hsl(0, 0%, 100%);
+    --BG-pattern: hsl(225, 100%, 98%);
+    --Card-BG: hsl(227, 47%, 96%);
+    --Blue-Text: hsl(228, 12%, 44%);
+    --Text: hsl(230, 17%, 14%);
+}
+
+/* ==========================
+===== Main Styles
+==============================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--Text);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background: var(--BG);
+    height: 300px;
+    position: relative;
+}
+
+body::before {
+    background: var(--BG-pattern);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.up {
+    color: var(--green);
+}
+
+.down {
+    color: var(--red);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+/* ==========================
+===== Start Header
+==============================*/
+
+
+.nav_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 35px 0;
+}
+
+.full-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_title {
+    font-size: 1.8rem;
+}
+
+.header_subtitle {
+    font-weight: bold;
+    color: var(--Blue-Text);
+    margin-top: 5px;
+}
+
+.toggler {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.toggler_text {
+    color: var(--Blue-Text);
+    font-weight: bold;
+}
+
+.mobile_line {
+    display: none;
+}
+
+.toggler_icon {
+    height: 21px;
+    width: 40px;
+    background: var(--Toggle);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.small-toggle {
+    content: '';
+    position: absolute;
+    background-color: var(--BG);
+    top: 2.5px;
+    left: 3.5px;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    transition: left 0.3s;
+}
+
+.small-toggle.active {
+    left: 21.5px;
+}
+
+/* ==========================
+===== Start Followers
+============================== */
+.followers {
+    padding: 10px 0;
+}
+
+.followers .items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.followers .followers_item {
+    background-color: var(--Card-BG);
+    padding: 30px 10px;
+    width: 100%;
+    height: auto;
+    flex: calc(100% / 4 - 15px);
+    max-width: calc(100% / 4 - 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.followers .followers_item::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.followers .followers_item:nth-child(1):before {
+    background: var(--facebook);
+}
+
+.followers .followers_item:nth-child(2):before {
+    background: var(--twitter);
+}
+
+.followers .followers_item:nth-child(3):before {
+    background: var(--instagram);
+}
+
+.followers .followers_item:nth-child(4):before {
+    background: var(--youTube);
+}
+
+.followers_item .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.name span {
+    color: var(--Blue-Text);
+    font-weight: bold;
+}
+
+.followers_item .number {
+    font-size: 4rem;
+    margin-top: 10px;
+}
+
+.followers_item h3 {
+    font-weight: 400;
+    letter-spacing: 5px;
+    font-size: 1rem;
+    margin-top: -10px;
+    color: var(--Blue-Text);
+    text-transform: uppercase;
+}
+
+.followers_item p {
+    margin-top: 30px;
+}
+
+/* ==========================
+===== Start Responsive
+============================== */
+.reaction {
+    padding: 20px 0 40px;
+}
+
+.reaction_header {
+    margin: 20px 0;
+    color: var(--Text);
+}
+
+.reaction_items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.reaction_items .reaction_column {
+    flex: calc(100% / 4 - 30px);
+    width: calc(100% / 4 - 30px);
+    background-color: var(--Card-BG);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.reaction_column-top,
+.reaction_column-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reaction_column-top {
+    margin-bottom: 20px;
+}
+
+.reaction_column-text {
+    color: var(--Blue-Text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.reaction_column-num {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* ==========================
+===== Start attribution
+============================== */
+
+.attribution {
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--Blue-Text);
+}
+
+/* ==========================
+===== Start Responsive
+============================== */
+
+@media (max-width:991px) {
+    .followers .followers_item {
+        flex: calc(100% / 2 - 10px);
+        max-width: calc(100% / 2 - 10px);
+    }
+
+    .reaction_items .reaction_column {
+        flex: calc(100% / 2 - 30px);
+        width: calc(100% / 2 - 30px);
+    }
+}
+
+@media (max-width:767px) {
+    .mobile_line {
+        display: block;
+        width: 100%;
+        color: var(--Blue-Text);
+    }
+
+    .full-header {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .header_subtitle {
+        margin-bottom: 10px;
+    }
+
+    .toggler {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+@media (max-width:500px) {
+
+    .reaction_items .reaction_column,
+    .followers .followers_item {
+        flex: calc(100% / 1);
+        max-width: calc(100% / 1);
+    }
+}
+
+@media (max-width:375px) {
+    .followers_item .number {
+        font-size: 2.8rem;
+    }
+
+    .followers .items {
+        justify-content: center;
+    }
+}
